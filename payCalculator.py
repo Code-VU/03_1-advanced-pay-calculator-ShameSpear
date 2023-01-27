@@ -1,18 +1,20 @@
 def calculatePay():
     # This first line is provided for you
     try:
-        hrs = float(input("Enter Hours:   "))
+        hrs = float(input("Enter Hours:"))
     except ValueError:
-        hrs = float(input("Error, please enter a numeric value: "))
+        hrs = float(input("Error, please enter a numeric value:"))
     try:
-        rate = float(input("Enter Rate:   "))
+        rate = float(input("Enter Rate:"))
     except ValueError:
-        rate = float(input("Error, please enter a numeric value: "))
+        rate = float(input("Error, please enter a numeric value:"))
     if hrs > 40:
-        otHours = hrs - 40
-        print("Pay: " + str(rate * 40 + (otHours*1.5*rate) + "\n"))
+        ot = (hrs - 40)*(rate * 1.5)
+        pay = (40 * rate) + ot
     else:
-        print("Pay: " + str(hrs * rate)+ "\n")
+        pay = hrs * rate
+
+    print(f"Pay: {pay}")
     
     # end assignment
 
